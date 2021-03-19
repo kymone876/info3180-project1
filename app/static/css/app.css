@@ -1,3 +1,40 @@
 body {
-    padding-top: 50px;
+    padding-top: 5rem;
+}
+
+.card{
+    width: 25rem;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+.btn{
+    width:47%;
+}
+
+.inline{
+    display: inline;
+}
+
+.btn-container{
+    text-align: center;
+}
+
+.top-info{
+    padding: 30px;
+}
+
+.block{
+    display: block;
+}
+
+.contain{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.field{
+    border-radius: 5px;
 }

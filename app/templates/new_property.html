@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" type="text/css" />
+{% endblock %}
+
+{% block main %}
+{% include "flash_messages.html" %}
+<div class="">
+    <h1 id="page-title">Add Property</h1> 
+    <form method = "POST" action="{{ url_for('property') }}" enctype="multipart/form-data">
+        {{newPropertyForm.csrf_token}}
+        <div class="contain">
+            {{newPropertyForm.title.label(class="block")}}
+            {{newPropertyForm.title(class="field col-md-8")}}
+        </div>
+        <div class="contain">
+            {{newPropertyForm.description.label(class="block")}}
+            {{newPropertyForm.description(class="field col-md-8")}}
+        </div>
+        <div class="contain">
+            {{newPropertyForm.number_of_bedrooms.label(class="block")}}
+            {{newPropertyForm.number_of_bedrooms(class="field col-md-8")}}
+        </div>
+        <div class="contain">
+            {{newPropertyForm.number_of_bathrooms.label(class="block")}}
+            {{newPropertyForm.number_of_bathrooms(class="field col-md-8")}}
+        </div>
+        <div class="contain">
+            {{newPropertyForm.price.label(class="block")}}
+            {{newPropertyForm.price(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
+        </div>
+		<div class="contain">
+            {{newPropertyForm.location.label(class="block")}}
+            {{newPropertyForm.location(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
+        </div>
+        <div class="contain">
+            {{newPropertyForm.Type.label(class="block")}}
+            {{newPropertyForm.Type(class="field col-md-8")}}
+        </div>
+        <div class="contain">
+            {{newPropertyForm.photo.label(class="block")}}
+            {{newPropertyForm.photo(class="field col-md-8")}}
+        </div>
+        <div class="contain">
+            <input type="submit" value="Add Property" class=""/>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

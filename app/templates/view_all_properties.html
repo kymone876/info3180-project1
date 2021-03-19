@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main%}
+{% include "flash_messages.html"%}
+
+<div class="">
+    <h1 class="title">Properties</h1>
+    {% for property in properties %}
+    <div class="">
+        <image src="{{ url_for('get_image', filename=property['photo']) }}" class="">
+        <div class="">
+            <span class="">{{ property['title'] }}</span>
+            <span class="">{{ property['location'] }}</span>
+
+            <span class="">{{ property['price'] }}</span>
+        </div>
+        <div class="">
+            <a class="" href="{{ url_for('inidi_property', propertyid=property['id']) }}">View Property</a>
+        </div>
+    </div>
+    <br>
+    {% endfor %}
+</div>
+{% endblock%}
