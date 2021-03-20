@@ -3,12 +3,12 @@ from . import db
 class Property(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(90))
-    description = db.Column(db.String(80))
+    description = db.Column(db.String(800))
     number_of_bedrooms = db.Column(db.String(40))
     number_of_bathrooms = db.Column(db.String(40))
     price = db.Column(db.String(200))
     location = db.Column(db.String(300))
-    type_h = db.Column(db.String(60))
+    type_h = db.Column(db.String(100))
     photo = db.Column(db.String(100))
     
     __tablename__ = "property"

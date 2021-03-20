@@ -5,25 +5,28 @@
 {% endblock %}
 
 {% block main %}
-<div class="">
-    <div class="">
-        <img class="" "  src="{{ url_for('get_image', filename = propertyH.photo) }}"/>
-        <div class="">
-		<span class="blk">{{propertyH.title}}</span>
-            <span class="blk">{{propertyH.price}}</span>
-			<span class="blk">{{propertyH.Type}}</span>
-            <span class="blk">{{propertyH.description}}</span>
-			<span class="blk">{{propertyH.number_of_bedrooms}}</span>
-            <span class="blk">{{propertyH.number_of_bathrooms}}</span>
-            <span class="blk">{{propertyH.location}}</span>
+<div class="space">
+<div class="ind-prop Row">
+		<div class="">
+        <img class="prop_pic"   src="{{ url_for('get_image', filename = pptyA.photo) }}"/>
         </div>
-    </div>
-<div class="">
-        <h5 class"card-title">About me</h5>
-        <p calss="card-text">{{ propertyH.bio }}</p>
-        <div class="">
-            <a href="#" class="">Send Realtor</a>
-        </div>
-    </div>
+		<div class="text-paddding2">
+			<span class="ind-headr ">{{pptyA.title}}</span>
+            <div class="Row margin-top{">
+			<span class="btn-style2 blk">{{pptyA.price}}</span>
+			<span class="blk btn-style3 margin-left">{{pptyA.type_h}}</span>
+             </div>
+			<span class="blk margin-top text-box">{{pptyA.description}}</span>
+			<div class="Row margin-top2 ">
+			<span class="blk">{{pptyA.number_of_bedrooms}} bedrooms</span>
+            <span class="blk margin-left">{{pptyA.number_of_bathrooms}} bathrooms</span>
+             </div>
+			<span class="blk margin-top2">{{pptyA.location}}</span>
+		<div class="margin-top2 view-btn2 color margin-bottom">	
+        <a href="#" class="color">Send Realtor</a>
+		</div>
+	   </div>
+    
+</div>
 </div>
 {% endblock %}

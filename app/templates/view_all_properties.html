@@ -3,22 +3,31 @@
 {% block main%}
 {% include "flash_messages.html"%}
 
-<div class="">
-    <h1 class="title">Properties</h1>
-    {% for property in properties %}
-    <div class="">
-        <image src="{{ url_for('get_image', filename=property['photo']) }}" class="">
-        <div class="">
-            <span class="">{{ property['title'] }}</span>
-            <span class="">{{ property['location'] }}</span>
-
-            <span class="">{{ property['price'] }}</span>
+<div class="prop-container ">
+    <h1 class="title2">Properties</h1>
+	<div class="paddding">
+	<div class="grid-container">
+	
+    {% for propA in Aproperties %}
+    <div class="prop ">
+        <image src="{{ url_for('get_image', filename=propA['photo']) }}" class="display-grid-pic">
+        <div class="text-paddding">
+		<div class="margin">
+            <span class="headr ">{{ propA['title'] }}</span>
+			</div>
+			<div >			
+            <span class="faide">{{ propA['location'] }}</span> 
+			</div>
+			<div class="margin-top">
+            <span class="btn-style">{{ propA['price'] }}</span>
+			</div>
         </div>
-        <div class="">
-            <a class="" href="{{ url_for('inidi_property', propertyid=property['id']) }}">View Property</a>
+		<div class="view-btn" >
+            <a class="" href="{{ url_for('inidi_property', propertyid=propA['id']) }}">View Property</a>
         </div>
-    </div>
-    <br>
+ </div>
     {% endfor %}
+	</div>
+		</div>
 </div>
 {% endblock%}

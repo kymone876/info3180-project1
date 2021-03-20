@@ -1,6 +1,6 @@
 from app import app, db
 from flask import render_template, request, url_for, redirect, flash, send_from_directory
-from .forms import NewForm
+from .forms import PropertyForm
 from werkzeug.utils import secure_filename
 from .models import Property
 from sqlalchemy import exc
@@ -19,10 +19,10 @@ def about():
     
 @app.route("/property", methods=["GET", "POST"])
 def property():
-    newPptyForm = NewForm()
+    newPptyForm = PropertyForm()
     
     if request.method == "POST":
-        if  newPropertyForm.validate_on_submit():
+        if  newPptyForm.validate_on_submit():
            
                 title =   newPptyForm.title.data
                 description =  newPptyForm.description.data
@@ -30,11 +30,11 @@ def property():
                 number_of_bathrooms =  newPptyForm.number_of_bathrooms.data
                 location =  newPptyForm.location.data
                 price =  newPptyForm.price.data
-                type_h =  newPptyForm.Type.data
+                propertyType =  newPptyForm.propertyType.data
                 photo =  newPptyForm.photo.data
                 p_filename = secure_filename(photo.filename)
                 
-                propertyH = Property(title,description,number_of_bedrooms,number_of_bathrooms,price,location,type_h,p_filename)
+                propertyH = Property(title,description,number_of_bedrooms,number_of_bathrooms,price,location,propertyType,p_filename)
                 
                 db.session.add(propertyH)
                 db.session.commit()
@@ -45,29 +45,29 @@ def property():
                 return redirect(url_for("properties"))
             
         
-        errors = form_errors(newPropertyForm)
+        errors = form_errors(newPptyForm)
         flash(''.join(error+" " for error in errors), "danger")
-    return render_template("new_property.html", newPropertyForm =  newPptyForm
+    return render_template("new_property.html",  newPptyForm =newPptyForm)
 
 
 @app.route("/properties")
 def properties():
-    ppty = Property.query.all()
-    properties = []
+    pptyA = Property.query.all()
+    Aproperties = []
     
-    for pptyH  in ppty A:
-        Properties.append({"title":pptyH.title, "price":pptyH.price, "location":pptyH.location, "photo":pptyH.photo, "id":pptyH.id})
+    for pptyH  in pptyA:
+        Aproperties.append({"title":pptyH.title, "price":pptyH.price, "location":pptyH.location, "photo":pptyH.photo, "id":pptyH.id})
     
-    return render_template("view_all_properties.html", properties = Properties)
+    return render_template("view_all_properties.html", Aproperties = Aproperties )
 
 @app.route('/property/<propertyid>')
 def inidi_property(propertyid):
-    pptyH  = pptiies.query.filter_by(id=propertyid).first()
+    pptyA  = Property.query.filter_by(id=propertyid).first()
     
-    if pptyH  is None:
+    if pptyA  is None:
         return redirect(url_for('home'))
     
-    return render_template("property.html", propertyH=pptyH)
+    return render_template("property.html", pptyA=pptyA)
 
 @app.route('/uploads/<filename>')
 def get_image(filename):

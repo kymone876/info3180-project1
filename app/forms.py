@@ -5,14 +5,14 @@ from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms.validators import DataRequired
 
 
-class NewForm(FlaskForm):
+class PropertyForm(FlaskForm):
     title = StringField('title', validators=[DataRequired()])
     description = TextAreaField("description", validators = [DataRequired()])   
     number_of_bedrooms = StringField("number_of_bedrooms", validators=[DataRequired()])
     number_of_bathrooms = StringField("number_of_bathrooms", validators=[DataRequired()])
     price= StringField("price", validators=[DataRequired()])
 
-    type_h= SelectField("Type", choices=[("None", "Select Property Type"), ("House", "House"), ("Apartment", "Apartment")], validators=[DataRequired()])
+    propertyType= SelectField("Type", choices=[("None", "Select Property Type"), ("House", "House"), ("Apartment", "Apartment")], validators=[DataRequired()])
 
     location = StringField("Location", validators = [DataRequired()])
     photo = FileField("photo", validators=[FileRequired()])

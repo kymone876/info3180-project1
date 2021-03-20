@@ -6,46 +6,55 @@
 
 {% block main %}
 {% include "flash_messages.html" %}
-<div class="">
-    <h1 id="page-title">Add Property</h1> 
+<div><div class="inline">
+ <h1 class="title" >Add New property</h1> 
+   </div>
+<div class="forms-con border">
+   
     <form method = "POST" action="{{ url_for('property') }}" enctype="multipart/form-data">
-        {{newPropertyForm.csrf_token}}
+        {{newPptyForm.csrf_token}}
         <div class="contain">
-            {{newPropertyForm.title.label(class="block")}}
-            {{newPropertyForm.title(class="field col-md-8")}}
+            {{newPptyForm.title.label(class="block")}}
+            {{newPptyForm.title(class="field col-md-8")}}
+        </div>
+        <div class="contain ">
+            {{newPptyForm.description.label(class="block")}}
+            {{newPptyForm.description(class="field col-md-8")}}
+        </div>
+		<div class="Row">
+        <div class="contain column s-ctn ">
+            {{newPptyForm.number_of_bedrooms.label(class="block")}}
+            {{newPptyForm.number_of_bedrooms(class="field  col-md-8")}}
+        </div>
+        <div class="contain column s-ctn ">
+            {{newPptyForm.number_of_bathrooms.label(class="block")}}
+            {{newPptyForm.number_of_bathrooms(class="field  col-md-8")}}
+        </div>
+		
+		  </div>
+		  <div class="Row">
+        <div class="contain column s-ctn  ">
+            {{newPptyForm.price.label(class="block")}}
+            {{newPptyForm.price(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
+        </div>
+		<div class="contain column s-ctn ">
+            {{newPptyForm.location.label(class="block")}}
+            {{newPptyForm.location(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
+        </div>
+		</div>
+        <div class="contain s-ctn">
+            {{newPptyForm.propertyType.label(class="block")}}
+            {{newPptyForm.propertyType(class="field col-md-8")}}
         </div>
         <div class="contain">
-            {{newPropertyForm.description.label(class="block")}}
-            {{newPropertyForm.description(class="field col-md-8")}}
+            {{newPptyForm.photo.label(class="block")}}
+            {{newPptyForm.photo(class="field col-md-8")}}
         </div>
         <div class="contain">
-            {{newPropertyForm.number_of_bedrooms.label(class="block")}}
-            {{newPropertyForm.number_of_bedrooms(class="field col-md-8")}}
-        </div>
-        <div class="contain">
-            {{newPropertyForm.number_of_bathrooms.label(class="block")}}
-            {{newPropertyForm.number_of_bathrooms(class="field col-md-8")}}
-        </div>
-        <div class="contain">
-            {{newPropertyForm.price.label(class="block")}}
-            {{newPropertyForm.price(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
-        </div>
-		<div class="contain">
-            {{newPropertyForm.location.label(class="block")}}
-            {{newPropertyForm.location(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
-        </div>
-        <div class="contain">
-            {{newPropertyForm.Type.label(class="block")}}
-            {{newPropertyForm.Type(class="field col-md-8")}}
-        </div>
-        <div class="contain">
-            {{newPropertyForm.photo.label(class="block")}}
-            {{newPropertyForm.photo(class="field col-md-8")}}
-        </div>
-        <div class="contain">
-            <input type="submit" value="Add Property" class=""/>
+            <input type="submit" value="Add Property" class="btn-container"/>
         </div>
     </form>
+</div>
 </div>
 
 {% endblock %}
