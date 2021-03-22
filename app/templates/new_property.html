@@ -35,16 +35,17 @@
 		  <div class="Row">
         <div class="contain column s-ctn  ">
             {{newPptyForm.price.label(class="block")}}
-            {{newPptyForm.price(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
+            {{newPptyForm.price(placeholder="", class="field col-md-8")}}
         </div>
 		<div class="contain column s-ctn ">
-            {{newPptyForm.location.label(class="block")}}
-            {{newPptyForm.location(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
+            {{newPptyForm.propertyType.label(class="block")}}
+            {{newPptyForm.propertyType(class="field col-md-8")}}
         </div>
 		</div>
         <div class="contain s-ctn">
-            {{newPptyForm.propertyType.label(class="block")}}
-            {{newPptyForm.propertyType(class="field col-md-8")}}
+			{{newPptyForm.location.label(class="block")}}
+            {{newPptyForm.location(placeholder="Kingston #, Jamaica", class="field col-md-8")}}
+            
         </div>
         <div class="contain">
             {{newPptyForm.photo.label(class="block")}}

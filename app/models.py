@@ -3,7 +3,7 @@ from . import db
 class Property(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(90))
-    description = db.Column(db.String(800))
+    description = db.Column(db.String(1000))
     number_of_bedrooms = db.Column(db.String(40))
     number_of_bathrooms = db.Column(db.String(40))
     price = db.Column(db.String(200))
