@@ -18,10 +18,19 @@
              </div>
 			<span class="blk margin-top text-box">{{pptyA.description}}</span>
 			<div class="Row margin-top2 ">
+			<div class="Row">
+			<image src="{{ url_for('static', filename='icon/bed.png')}}" class="icon">
 			<span class="blk">{{pptyA.number_of_bedrooms}} bedrooms</span>
-            <span class="blk margin-left">{{pptyA.number_of_bathrooms}} bathrooms</span>
              </div>
-			<span class="blk margin-top2">{{pptyA.location}}</span>
+			 <div class="Row  margin-left">
+			<image src="{{ url_for('static', filename='icon/shower.png')}}" class="icon">
+			<span class="blk">{{pptyA.number_of_bathrooms}} bathrooms</span>
+             </div>
+			 </div>
+			 <div class="Row margin-top2">
+			 <image src="{{ url_for('static', filename='icon/location.png')}}" class="icon">
+			<span class="blk">{{pptyA.location}}</span>
+			</div>
 		<div class="margin-top2 view-btn2 color margin-bottom">	
         <a href="#" class="color">Send Realtor</a>
 		</div>
